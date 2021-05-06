@@ -2,6 +2,10 @@ import './ManageOwners.css';
 import AddOwner from '../AddOwner/AddOwner';
 
 function ManageOwners(){
+
+    const deleteOwner = () => {
+        console.log('in deleteOwner');
+    }
     
     return(
     <>
@@ -16,7 +20,7 @@ function ManageOwners(){
         <tr>
             <td>Dane</td>
             <td>1</td>
-            <td><button>Delete</button></td>
+            <td><button onClick={deleteOwner}>Delete</button></td>
         </tr>
     </table>
     </>

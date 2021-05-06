@@ -20,6 +20,10 @@ const handleChange = (event) => {
     console.log(event.target.value);
 }
 
+const submitPet = () => {
+    console.log('in submit pet');
+}
+
 
     return(
         <>
@@ -31,7 +35,7 @@ const handleChange = (event) => {
         <select name="owners" id="owners">
             <option value="ownername">Owner Name:</option>
         </select>
-        <button>Submit</button>
+        <button onClick ={submitPet}>Submit</button>
     </div>
         </>
     )

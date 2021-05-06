@@ -2,6 +2,15 @@ import './History.css';
 
 function History(){
 
+    const deletePet = () => {
+        console.log('in deletePet');
+
+    }
+
+    const checkInPet = () => {
+        console.log('in checkInPet');
+    }
+
     return(
         <>
         <h3>History</h3>
@@ -20,15 +29,7 @@ function History(){
                 <td>Shih-tzu</td>
                 <td>Black</td>
                 <td>no</td>
-                <td><button>Delete</button> | <button>Check In</button></td>
-           </tr> 
-           <tr>
-                <td>Dane</td>
-                <td>Juniper</td>
-                <td>Cat</td>
-                <td>Tabby</td>
-                <td>no</td>
-                <td><button>Delete</button> | <button>Check In</button></td>
+                <td><button onClick={deletePet}>Delete</button> | <button onClick={checkInPet}>Check In</button></td>
            </tr> 
         </table>
         </>
