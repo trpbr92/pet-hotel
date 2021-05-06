@@ -9,7 +9,7 @@ function ManageOwners(){
     
     return(
     <>
-    <h3>Owners</h3>
+    <h2>Owners</h2>
     <AddOwner />
     <table>
         <tr>
