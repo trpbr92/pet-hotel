@@ -1,6 +1,15 @@
 import './History.css';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 
 function History(){
+const dispatch = useDispatch();
+
+const pets = useSelector((store) => store.listpets)
+
+useEffect(() => {
+    dispatch({type: 'FETCH_LIST'})
+}, [])
 
     const deletePet = () => {
         console.log('in deletePet');
@@ -23,14 +32,18 @@ function History(){
                 <th>Checked in</th>
                 <th>Actions</th>
             </tr>
-           <tr>
-                <td>Chris</td>
-                <td>Charlie</td>
-                <td>Shih-tzu</td>
-                <td>Black</td>
-                <td>no</td>
+          {pets.map(pet => {
+              return (
+          <tr>
+                <td>{pet.name}</td>
+                <td>{pet.pet_name}</td>
+                <td>{pet.breed}</td>
+                <td>{pet.color}</td>
+                <td>{pet.checked_in ? "Yes" : "No"}</td>
                 <td><button onClick={deletePet}>Delete</button> | <button onClick={checkInPet}>Check In</button></td>
            </tr> 
+              )
+           })} 
         </table>
         </>
     )
