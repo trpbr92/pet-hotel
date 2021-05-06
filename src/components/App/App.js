@@ -13,7 +13,17 @@ function App() {
   return (
  <>
  <Header />
+ 
   <Router>
+  <nav>
+    <ul>
+      <div>
+      <Link to='/'>Dashboard</Link>
+      </div>
+      <div>
+        <Link to='/owners'>Manage Owners</Link></div>
+    </ul>
+  </nav>
     <Route path="/" exact>
     <Dashboard />
   </Route>
@@ -21,6 +31,7 @@ function App() {
   <Route path="/owners" exact>
     <ManageOwners />
   </Route>
+ 
  </Router>
  
  </>
