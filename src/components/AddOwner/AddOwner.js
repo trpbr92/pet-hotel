@@ -1,5 +1,8 @@
+import {React, useState} from 'react';
 
 function AddOwner(){
+
+    const [owner, setOwner] = useState();
 
     const submitOwner = () => {
         console.log('in submitOwner');
@@ -9,7 +12,7 @@ function AddOwner(){
     <>
     <h3>Add Owner</h3>
     <div>
-        <input type="text" placeholder="Owner name"></input>
+        <input onChange={(event)=> setOwner(event.target.value)} type="text" placeholder="Owner name"></input>
         <button onClick={submitOwner}>Submit</button>
     </div>
     </>

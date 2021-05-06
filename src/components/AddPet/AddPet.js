@@ -5,20 +5,20 @@ import {useDispatch} from 'react-redux';
 function AddPet() {
 
 const [petInfo, setPetInfo] = useState('');
-
+const [petName, setPetName] = useState('');
+const [petColor, setPetColor] = useState('');
+const [petBreed, setPetBreed] = useState('');
 // const addPet = () => {
-//     setPetInfo();
+//  console.log('in addPet');
 //     pet = {
 //         petName: petName,
 //         petColor: petColor,
 //         petBreed: petBreed
 //     }
+        //setPetInfo(pet);
 // }
 
-const handleChange = (event) => {
-    setPetInfo(event.target.value);
-    console.log(event.target.value);
-}
+
 
 const submitPet = () => {
     console.log('in submit pet');
@@ -29,9 +29,9 @@ const submitPet = () => {
         <>
     <h3>Add Pet</h3>
     <div>
-        <input onChange={handleChange} type="text" placeholder="Pet Name"/>
-        <input onChange={handleChange} type="text" placeholder="Pet Color"/>
-        <input onChange={handleChange} type="text" placeholder="Pet Breed"/>
+        <input onChange={(event)=> setPetName(event.target.value)} type="text" placeholder="Pet Name"/>
+        <input onChange={(event)=> setPetColor(event.target.value)} type="text" placeholder="Pet Color"/>
+        <input onChange={(event)=> setPetBreed(event.target.value)} type="text" placeholder="Pet Breed"/>
         <select name="owners" id="owners">
             <option value="ownername">Owner Name:</option>
         </select>
