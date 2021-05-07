@@ -2,6 +2,8 @@ import {all} from 'redux-saga/effects';
 import  listPetsSaga from './listpets.saga';
 import deletePetSaga from './deletepet.saga';
 import addOwnerSaga from './addOwner.saga';
+import addPetSaga from './addpet.saga';
+
 
 
 export default function* rootSaga() {
@@ -9,5 +11,6 @@ export default function* rootSaga() {
         listPetsSaga(),
         deletePetSaga(),
         addOwnerSaga(),
+        addPetSaga(),
     ]);
 }

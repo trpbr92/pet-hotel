@@ -4,27 +4,24 @@ import {useDispatch} from 'react-redux';
 
 function AddPet() {
 
+const dispatch = useDispatch();
 const [petInfo, setPetInfo] = useState('');
 const [petName, setPetName] = useState('');
 const [petColor, setPetColor] = useState('');
 const [petBreed, setPetBreed] = useState('');
 
 
-// const addPet = () => {
-//  console.log('in addPet');
-//     pet = {
-//         petName: petName,
-//         petColor: petColor,
-//         petBreed: petBreed
-//     }
-        //setPetInfo(pet);
-// }
-
-
-
-const submitPet = () => {
-    console.log('in submit pet');
+const addPet = () => {
+ console.log('in addPet');
+    pet = {
+        petName: petName,
+        petColor: petColor,
+        petBreed: petBreed
+    }
+        setPetInfo(pet);
+        dispatch({type: 'ADD_PET', payload: petInfo})
 }
+
 
 
     return(
@@ -37,7 +34,7 @@ const submitPet = () => {
         <select name="owners" id="owners">
             <option value="ownername">Owner Name:</option>
         </select>
-        <button onClick ={submitPet}>Submit</button>
+        <button onClick ={addPet}>Submit</button>
     </div>
         </>
     )
