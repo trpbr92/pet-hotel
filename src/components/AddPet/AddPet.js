@@ -1,25 +1,30 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 
 
 function AddPet() {
 
+useEffect(() => {
+    
+}, [])
+
 const dispatch = useDispatch();
-const [petInfo, setPetInfo] = useState('');
+
 const [petName, setPetName] = useState('');
 const [petColor, setPetColor] = useState('');
 const [petBreed, setPetBreed] = useState('');
 
+const pets = {
+    petName: petName,
+    petColor: petColor,
+    petBreed: petBreed
+}
 
+    
+console.log(pets)
 const addPet = () => {
  console.log('in addPet');
-    pet = {
-        petName: petName,
-        petColor: petColor,
-        petBreed: petBreed
-    }
-        setPetInfo(pet);
-        dispatch({type: 'ADD_PET', payload: petInfo})
+        dispatch({type: 'ADD_PET', payload: pets})
 }
 
 
@@ -28,9 +33,9 @@ const addPet = () => {
         <>
     <h3>Add Pet</h3>
     <div>
-        <input onChange={(event)=> setPetName(event.target.value)} type="text" placeholder="Pet Name"/>
-        <input onChange={(event)=> setPetColor(event.target.value)} type="text" placeholder="Pet Color"/>
-        <input onChange={(event)=> setPetBreed(event.target.value)} type="text" placeholder="Pet Breed"/>
+        <input onChange={(event)=> setPetName(event.target.value)}  type="text" placeholder="Pet Name"/>
+        <input onChange={(event)=> setPetColor(event.target.value)}  type="text" placeholder="Pet Color"/>
+        <input onChange={(event)=> setPetBreed(event.target.value)}  type="text" placeholder="Pet Breed"/>
         <select name="owners" id="owners">
             <option value="ownername">Owner Name:</option>
         </select>
