@@ -1,10 +1,13 @@
 import {React, useState} from 'react';
+import { useSelector, useDispatch } from 'react-redux'
 
 function AddOwner(){
+    const dispatch = useDispatch();
 
     const [owner, setOwner] = useState();
 
     const submitOwner = () => {
+        dispatch({ type: 'ADD_OWNER', payload: owner})
         console.log('in submitOwner');
     }
 
