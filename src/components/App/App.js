@@ -21,14 +21,14 @@ function App() {
       <Link to='/'>Dashboard</Link>
       </div>
       <div>
-        <Link to='/owners'>Manage Owners</Link></div>
+        <Link to='/owner'>Manage Owners</Link></div>
     </ul>
   </nav>
     <Route path="/" exact>
     <Dashboard />
   </Route>
 
-  <Route path="/owners" exact>
+  <Route path="/owner" exact>
     <ManageOwners />
   </Route>
  

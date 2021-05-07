@@ -1,4 +1,4 @@
-const addOwnerReducer = (state = {}, action) => {
+const addOwnerReducer = (state = [], action) => {
     switch (action.type) {
     case 'SET_OWNER':
         return action.payload;
